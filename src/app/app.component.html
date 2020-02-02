@@ -1,23 +1,27 @@
 <mat-tab-group color="primary" backgroundColor="primary">
   <mat-tab label="Erster Secret Trip">
-    <mat-form-field>
-    <input #text1 matInput type="password" placeholder="Ziel">
-    </mat-form-field>
+    <div style="padding:10px; border:1px solid white;">
+      <mat-form-field>
+      <input #text1 matInput type="password" placeholder="Ziel 1">
+      </mat-form-field>
+    </div>
   </mat-tab>
   <mat-tab label="Zweiter Secret Trip">
-    <mat-form-field>
-    <input #text2 matInput type="password" placeholder="Ziel">
-    </mat-form-field>
+    <div style="padding:10px; border:1px solid white;">
+      <mat-form-field>
+      <input #text2 matInput type="password" placeholder="Ziel 2">
+      </mat-form-field>
+    </div>
   </mat-tab>
 </mat-tab-group>
 
-<mat-card>
+<mat-card style="margin-top: 10px">
   <mat-card-title>Ergebnis:</mat-card-title>
   <mat-card-content>
 <!--{{(text1.value | uppercase)==(text2.value | uppercase) ? 'Jo' : 'Nope'}}-->
-<div [style.display]="(text1.value | uppercase)!=(text2.value | uppercase) ? 'block': 'none'">
-  <mat-icon color="accent">check_circle</mat-icon>Passt!</div>
-<div [style.display]="(text1.value | uppercase)==(text2.value | uppercase) ? 'block': 'none'">
-  <mat-icon color="warn">warning</mat-icon>Oh nein...</div>
+<div style="color: lightgreen" [style.display]="(text1.value | uppercase)!=(text2.value | uppercase) ? 'block': 'none'">
+  <mat-icon>check_circle</mat-icon>Passt!</div>
+<div style="color: orange" [style.display]="(text1.value | uppercase)==(text2.value | uppercase) ? 'block': 'none'">
+  <mat-icon>warning</mat-icon>Oh nein...</div>
   </mat-card-content>
 </mat-card>
