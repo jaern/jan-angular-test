@@ -19,9 +19,17 @@
   <mat-card-title>Ergebnis:</mat-card-title>
   <mat-card-content>
 <!--{{(text1.value | uppercase)==(text2.value | uppercase) ? 'Jo' : 'Nope'}}-->
-<div style="color: lightgreen" [style.display]="(text1.value | uppercase)!=(text2.value | uppercase) ? 'block': 'none'">
-  <mat-icon>check_circle</mat-icon>Passt!</div>
-<div style="color: orange" [style.display]="(text1.value | uppercase)==(text2.value | uppercase) ? 'block': 'none'">
-  <mat-icon>warning</mat-icon>Oh nein...</div>
+    <div [style.display]="(text1.value=='' || text2.value =='') ? 'block': 'none'">
+      <mat-icon>help</mat-icon>
+      <span> Bitte gib zwei Ziele ein</span>
+    </div>
+    <div style="color: lightgreen" [style.display]="(text1.value | uppercase)!=(text2.value | uppercase) && text1.value && text2.value ? 'block': 'none'">
+      <mat-icon>check_circle</mat-icon>
+      <span> Passt!</span>
+    </div>
+    <div style="color: orange" [style.display]="(text1.value | uppercase)==(text2.value | uppercase) && text1.value && text2.value ? 'block': 'none'">
+      <mat-icon>warning</mat-icon>
+      <span> Oh nein...</span>
+    </div>
   </mat-card-content>
 </mat-card>
