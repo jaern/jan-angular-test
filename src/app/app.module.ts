@@ -10,9 +10,11 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MatSliderModule, MatTabsModule, MatInputModule, MatButtonModule, MatIconModule ],
+  imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MatSliderModule, MatTabsModule, MatInputModule, MatButtonModule, MatIconModule, MatCardModule, MatDividerModule ],
   declarations: [ AppComponent, ResultComponent ],
   bootstrap:    [ AppComponent ]
 })

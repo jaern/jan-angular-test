@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: []
   })
 export class ResultComponent  {
-  @Input() name: string;
+  @Input() identical: boolean;
 }

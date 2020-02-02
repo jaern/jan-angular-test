@@ -1,13 +1,23 @@
 <mat-tab-group color="primary" backgroundColor="primary">
   <mat-tab label="Erster Secret Trip">
     <mat-form-field>
-    <input matInput type="password" placeholder="Text">
+    <input #text1 matInput type="password" placeholder="Ziel">
     </mat-form-field>
   </mat-tab>
   <mat-tab label="Zweiter Secret Trip">
     <mat-form-field>
-    <input matInput type="password" placeholder="Text">
+    <input #text2 matInput type="password" placeholder="Ziel">
     </mat-form-field>
   </mat-tab>
 </mat-tab-group>
-<button mat-raised-button color="primary">Prüfen!</button>
+
+<mat-card>
+  <mat-card-title>Ergebnis:</mat-card-title>
+  <mat-card-content>
+<!--{{(text1.value | uppercase)==(text2.value | uppercase) ? 'Jo' : 'Nope'}}-->
+<div [style.display]="(text1.value | uppercase)!=(text2.value | uppercase) ? 'block': 'none'">
+  <mat-icon color="accent">check_circle</mat-icon>Passt!</div>
+<div [style.display]="(text1.value | uppercase)==(text2.value | uppercase) ? 'block': 'none'">
+  <mat-icon color="warn">warning</mat-icon>Oh nein...</div>
+  </mat-card-content>
+</mat-card>
